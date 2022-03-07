@@ -1,0 +1,126 @@
+@import "./index.scss";
+
+.CardPreview {
+  background-color: $Very-dark-blue_2;
+  width: 33rem;
+  height: 100%;
+  padding: 20px;
+  border-radius: 10px;
+
+  &-imgContainer {
+    position: relative;
+
+    & img {
+      width: 100%;
+      height: 100%;
+      border-radius: 10px;
+      cursor: pointer;
+      display: block;
+    }
+
+    &__view {
+      background-image: linear-gradient(
+        to bottom,
+        hsla(178, 100%, 50%, 0.5),
+        hsla(178, 100%, 50%, 0.5)
+      );
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      top: 0;
+      border-radius: 10px;
+      opacity: 0;
+      transition: opacity 0.4s;
+      cursor: pointer;
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+
+  &-title {
+    color: $White;
+    margin: 16px 0;
+    font-size: 2.1rem;
+    transition: color 0.4s;
+    cursor: pointer;
+
+    &:hover {
+      color: $Cyan;
+    }
+  }
+
+  &-subtext {
+    color: $Soft-blue;
+    margin-bottom: 16px;
+  }
+
+  &-factors {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 16px;
+
+    & div {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 5px;
+    }
+
+    &__days {
+      color: $Soft-blue;
+      font-size: 1.5rem;
+    }
+
+    &__eth {
+      color: $Cyan;
+      font-size: 1.5rem;
+    }
+  }
+}
+
+.author-container {
+  display: flex;
+  align-items: center;
+  padding: 14px 0 0 0;
+  border-top: 1px solid $Very-dark-blue_3;
+  gap: 20px;
+
+  &__img-container {
+    & img {
+      width: 35px;
+      border: 2px solid $White;
+      border-radius: 50%;
+    }
+  }
+
+  &__text {
+    color: $Soft-blue;
+    font-size: 1.5rem;
+  }
+
+  &__sub {
+    color: $White;
+    cursor: pointer;
+    transition: color 0.4s;
+
+    &:hover {
+      color: $Cyan;
+    }
+  }
+}
+
+@media (max-width: 376px) {
+  .CardPreview {
+    height: 100%;
+    width: 90%;
+
+    &-title {
+      font-size: 2rem;
+    }
+  }
+}
